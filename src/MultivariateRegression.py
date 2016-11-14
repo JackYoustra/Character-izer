@@ -36,8 +36,6 @@ class MultivariateRegression(object):
                     prediction = self.predict(example.inputs)
                     #logistic
                     self.weights[index] = weight + MultivariateRegression.LEARNING_CONSTANT * (example.output - prediction) * prediction * (1-prediction) * example.inputs[index]
-                    if math.isnan(self.weights[index]):
-                        print("hi")
                     #linear
                     #self.weights[index] = weight + MultivariateRegression.LEARNING_CONSTANT*(example.output - prediction)*example.inputs[index]
     def predict(self, xvals):
